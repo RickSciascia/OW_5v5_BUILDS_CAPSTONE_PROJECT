@@ -1,0 +1,55 @@
+package entities;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "passive")
+public class Passive {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String description;
+
+    @ManyToMany(mappedBy = "passive")
+    @JsonBackReference
+    private List<Hero> heroList = new ArrayList<>();
+
+    public Passive(){}
+    public Passive(String name, String description){
+        this.name = name;
+        this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<Hero> getHeroList() {
+        return heroList;
+    }
+
+    public void setHeroList(List<Hero> heroList) {
+        this.heroList = heroList;
+    }
+}
