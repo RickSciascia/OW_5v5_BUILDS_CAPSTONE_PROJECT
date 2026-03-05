@@ -47,4 +47,9 @@ public class HeroService {
     }
         else return existingHero.get();
     }
+
+//    GET
+    public List<Hero> getAllHeroes() {
+        return heroRepository.findAll();
+    }
 }
