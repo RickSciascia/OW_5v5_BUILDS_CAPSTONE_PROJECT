@@ -1,0 +1,306 @@
+[
+  {
+    "name": "Anran",
+    "role": "DAMAGE",
+    "hp": 250,
+    "health": 250,
+    "shield": 0,
+    "armor": 0,
+    "image": "https://placeholder.com/images/anran.png",
+    "weapons": [
+      {
+        "name": "Ventagli Zhuque",
+        "description": "Ventagli che sparano proiettili infuocati.",
+        "maxDmg": 44,
+        "minDmg": 44,
+        "weaponType": "PROJECTILE"
+      },
+      {
+        "name": "Fiammata",
+        "description": "Folata di vento caldo che amplifica i danni da fuoco.",
+        "maxDmg": 60,
+        "minDmg": 30,
+        "weaponType": "BEAM"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Scatto Infernale",
+        "description": "Sfreccia in avanti danneggiando i nemici che colpisce.",
+        "damage": 50,
+        "healing": 0,
+        "duration": 1.3,
+        "cooldown": 8.0,
+        "range": 23.4
+      },
+      {
+        "name": "Fiamma Danzante",
+        "description": "Colpisce i nemici vicini schivando tutti i danni.",
+        "damage": 50,
+        "healing": 0,
+        "duration": 0.8,
+        "cooldown": 8.0,
+        "range": 8.0
+      }
+    ],
+    "perks": [
+      {
+        "name": "Ardere",
+        "description": "I nemici incendiati bruciano per 1,5 secondi in più.",
+        "perkType": "MINOR"
+      },
+      {
+        "name": "Scudo Termico",
+        "description": "Fornisce 50 salute extra quando usi la tua Ultra e per ogni nemico che manda in fiamme.",
+        "perkType": "MINOR"
+      },
+      {
+        "name": "Miccia Corta",
+        "description": "Colpire un nemico con Scatto Infernale riduce il cooldown di 1,5s.",
+        "perkType": "MAJOR"
+      },
+      {
+        "name": "Fiamma Vorace",
+        "description": "Fornisce 50 salute per ogni nemico colpito da Fiamma Danzante.",
+        "perkType": "MAJOR"
+      }
+    ],
+    "ultimates": [
+      {
+        "name": "Ascesa Vermiglia",
+        "description": "Carica in avanti, esplodendo all'impatto e dando fuoco ai nemici.",
+        "damage": 165,
+        "healing": 0,
+        "duration": 3.0,
+        "range": 10,
+        "cost": 2000
+      },
+      {
+        "name": "Rinascita Vermiglia",
+        "description": "Alla morte, resuscita in un'esplosione infuocata.",
+        "damage": 55,
+        "healing": 0,
+        "duration": 3.0,
+        "range": 7,
+        "cost": 2000
+      }
+    ],
+    "passive": [
+      {
+        "name": "Accensione",
+        "description": "Colpisce i nemici con attacchi di fuoco per bruciarli."
+      },
+      {
+        "name": "Ruolo Secondario: Fiancheggiatore",
+        "description": "I Medikit ripristinano più salute."
+      }
+    ]
+  },
+  {
+    "name": "D.va",
+    "role": "TANK",
+    "hp": 650,
+    "health": 325,
+    "shield": 0,
+    "armor": 325,
+    "image": "https://placeholder.com/images/dva.png",
+    "weapons": [
+      {
+        "name": "Cannoni a fusione",
+        "description": "Armi automatiche a corto raggio e ampia rosata.",
+        "maxDmg": 22,
+        "minDmg": 6.6,
+        "weaponType": "HITSCAN"
+      },
+      {
+        "name": "Pistola Laser",
+        "description": "Arma automatica.",
+        "maxDmg": 14,
+        "minDmg": 14,
+        "weaponType": "PROJECTILE"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Retrorazzi",
+        "description": "Voli nell direzione verso cui ti stai rivolgendo.",
+        "damage": 25,
+        "healing": 0,
+        "duration": 2,
+        "cooldown": 3.5,
+        "range": 35
+      },
+      {
+        "name": "Matrice difensiva",
+        "description": "Blocca i proiettili nell area frontale",
+        "damage": 0,
+        "healing": 0,
+        "duration": 3,
+        "cooldown": 1.0,
+        "range": 10.3
+      },
+      {
+        "name": "Micromissili",
+        "description": "Spari una salva di razzi esplosivi.",
+        "damage": 153,
+        "healing": 0,
+        "duration": 1.6,
+        "cooldown": 7.0,
+        "range": 1.5
+      }
+    ],
+    "perks": [
+      {
+        "name": "Potere del coniglio",
+        "description": "Espulsione! fornisce 75 salute extra temporanea e l'area di danno di Richiama Mech aumenta del 50%.",
+        "perkType": "MINOR"
+      },
+      {
+        "name": "Retrorazzi prolungati",
+        "description": "Colpire un nemico con Retrorazzi infligge il 40% di danni in più e ne aumenta la durata di 0.5 secondi.",
+        "perkType": "MINOR"
+      },
+      {
+        "name": "Sistema scudo",
+        "description": "Converte 150 salute in scudi. Matrice difensiva ripristina gli scudi per il 25% dei danni che assorbe.",
+        "perkType": "MAJOR"
+      },
+      {
+        "name": "Fusione di precisione",
+        "description": "Premi tasto ricarica per ridurre la rosa di Cannoni a Fusione del 75% per 3 secondi.",
+        "perkType": "MAJOR"
+      }
+    ],
+    "ultimates": [
+      {
+        "name": "Autodistruzione",
+        "description": "Ti catapulti fuori dal mech, sovraccaricandolo e causandone l'esplosione poco dopo.",
+        "damage": 1000,
+        "healing": 0,
+        "duration": 3.0,
+        "range": 21,
+        "cost": 1700
+      },
+      {
+        "name": "Richiama Mech",
+        "description": "Richiami un nuovo mech.",
+        "damage": 250,
+        "healing": 0,
+        "duration": 3.0,
+        "range": 3,
+        "cost": 280
+      }
+    ],
+    "passive": [
+      {
+        "name": "Espulsione!",
+        "description": "Ti catapulti fuori dal mech quando viene distrutto."
+      },
+      {
+        "name": "Ruolo: Tank",
+        "description": "La carica della Ultra tramite cure e danni subiti è ridotta. Aumenta la salute base nelle modalità in coda ruoli."
+      },
+      {
+        "name": "Ruolo Secondario: Aggressore",
+        "description": "Restare in aria fornisce cure nel tempo."
+      }
+    ]
+  },
+  {
+    "name": "Juno",
+    "role": "SUPPORT",
+    "hp": 225,
+    "health": 75,
+    "shield": 150,
+    "armor": 0,
+    "image": "https://placeholder.com/images/juno.png",
+    "weapons": [
+      {
+        "name": "Mediblaster (Cura)",
+        "description": "Arma a raffica che cura gli alleati e infligge i danni ai nemici.",
+        "maxDmg": 72,
+        "minDmg": 21.6,
+        "weaponType": "HITSCAN"
+      },
+      {
+        "name": "Mediblaster (Danni)",
+        "description": "Arma a raffica che cura gli alleati e infligge i danni ai nemici.",
+        "maxDmg": 90,
+        "minDmg": 27,
+        "weaponType": "HITSCAN"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Siluri Pulsar",
+        "description": "Aggancia e poi spara proiettili a ricerca. Cura gli alleati nel tempo e danneggia i nemici. (Cure periodiche 50)",
+        "damage": 85,
+        "healing": 85,
+        "duration": 4,
+        "cooldown": 10.0,
+        "range": 40
+      },
+      {
+        "name": "Planata Potenziata",
+        "description": "Plana orizzontalmente a velocità di movimento aumentata. (+ 50% velocità di movimento)",
+        "damage": 0,
+        "healing": 0,
+        "duration": 4,
+        "cooldown": 6.0,
+        "range": 33
+      },
+      {
+        "name": "Anello sonico",
+        "description": "Posiziona un anello che aumenta la velocità di movimento degli alleati che lo attraversano. (+ 50% velocità di movimento)",
+        "damage": 0,
+        "healing": 0,
+        "duration": 6,
+        "cooldown": 14,
+        "range": 17.5
+      }
+    ],
+    "perks": [
+      {
+        "name": "Segni vitali familiari",
+        "description": "I Siluri Pulsar agganciano gli alleati il 35% più velocemente.",
+        "perkType": "MINOR"
+      },
+      {
+        "name": "Sotto tiro",
+        "description": "Riduce il tempo di recupero di Siluri Pulsar di 1 secondo per ogni nemico colpito.",
+        "perkType": "MINOR"
+      },
+      {
+        "name": "Volo",
+        "description": "Gli Stivali Marziani consentono di effettuare un salto triplo.",
+        "perkType": "MAJOR"
+      },
+      {
+        "name": "Velociblaster",
+        "description": "Finché Planata Potenziata è attiva, Mediblaster continua a sparare.",
+        "perkType": "MAJOR"
+      }
+    ],
+    "ultimates": [
+      {
+        "name": "Flusso cosmico",
+        "description": "Richiama un raggio che si muove in avanti, curando gli alleati e incrementando i loro danni. (Danno + 30%)",
+        "damage": 0,
+        "healing": 680,
+        "duration": 8.0,
+        "range": 8,
+        "cost": 2900
+      }
+    ],
+    "passive": [
+      {
+        "name": "Stivali Marziani",
+        "description": "Mentre sei in aria, premi il tasto per saltare per eseguire un doppio salto e poi tienilo premuto per fluttuare."
+      },
+      {
+        "name": "Ruolo Secondario: Superstite",
+        "description": "Le abilità di movimento attivano la rigenerazione passiva della salute."
+      }
+    ]
+  }
+]

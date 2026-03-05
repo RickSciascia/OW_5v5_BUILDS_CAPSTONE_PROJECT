@@ -1,5 +1,6 @@
-package entities;
+package ricksciascia.ow_5v5_build.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -37,7 +38,7 @@ public class Hero {
     @JoinTable(name = "heroes_passive",
     joinColumns = @JoinColumn(name = "hero_id"),
     inverseJoinColumns = @JoinColumn(name = "passive_id"))
-    @JsonManagedReference
+    @JsonIgnoreProperties("heroList")
     private List<Passive> passive = new ArrayList<>();
 
     public Hero(){}

@@ -1,6 +1,7 @@
-package entities;
+package ricksciascia.ow_5v5_build.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class Passive {
     private String description;
 
     @ManyToMany(mappedBy = "passive")
-    @JsonBackReference
+    @JsonIgnoreProperties("passive")
     private List<Hero> heroList = new ArrayList<>();
 
     public Passive(){}

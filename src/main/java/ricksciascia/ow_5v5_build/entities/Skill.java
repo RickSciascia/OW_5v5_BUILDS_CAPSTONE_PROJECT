@@ -1,11 +1,11 @@
-package entities;
+package ricksciascia.ow_5v5_build.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "ultimates")
-public class Ultimate {
+@Table(name = "skills")
+public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,22 +14,22 @@ public class Ultimate {
     private Double damage;
     private Double healing;
     private Double duration;
+    private Double cooldown;
     private Double range;
-    private Double cost;
     @ManyToOne
     @JoinColumn(name = "hero_id")
     @JsonBackReference
     private Hero hero;
 
-    public Ultimate(){}
-    public Ultimate(String name, String description, Double damage, Double healing, Double duration, Double range, Double cost) {
+    public Skill(){}
+    public Skill(String name, String description, Double damage, Double healing, Double duration, Double cooldown, Double range) {
         this.name = name;
         this.description = description;
         this.damage = damage;
         this.healing = healing;
         this.duration = duration;
+        this.cooldown = cooldown;
         this.range = range;
-        this.cost = cost;
     }
 
     public Long getId() {
@@ -76,20 +76,20 @@ public class Ultimate {
         this.duration = duration;
     }
 
+    public Double getCooldown() {
+        return cooldown;
+    }
+
+    public void setCooldown(Double cooldown) {
+        this.cooldown = cooldown;
+    }
+
     public Double getRange() {
         return range;
     }
 
     public void setRange(Double range) {
         this.range = range;
-    }
-
-    public Double getCost() {
-        return cost;
-    }
-
-    public void setCost(Double cost) {
-        this.cost = cost;
     }
 
     public Hero getHero() {
