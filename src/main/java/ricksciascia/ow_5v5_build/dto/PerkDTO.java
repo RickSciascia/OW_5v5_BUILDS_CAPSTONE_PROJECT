@@ -1,6 +1,5 @@
 package ricksciascia.ow_5v5_build.dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
