@@ -3,8 +3,10 @@ package ricksciascia.ow_5v5_build.services;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ricksciascia.ow_5v5_build.entities.Hero;
-import ricksciascia.ow_5v5_build.entities.Passive;
+import ricksciascia.ow_5v5_build.dto.HeroDTO;
+import ricksciascia.ow_5v5_build.dto.PassiveDTO;
+import ricksciascia.ow_5v5_build.entities.*;
+import ricksciascia.ow_5v5_build.exceptions.BadReqException;
 import ricksciascia.ow_5v5_build.repositories.HeroRepository;
 import ricksciascia.ow_5v5_build.repositories.PassiveRepository;
 
@@ -19,7 +21,7 @@ public class HeroService {
     @Autowired
     private PassiveRepository passiveRepository;
 
-//    SAVE
+//    SAVE IMPORT
     @Transactional
     public Hero saveHero(Hero hero) {
 //        controllo se l eroe esiste già in DB
@@ -51,5 +53,111 @@ public class HeroService {
 //    GET
     public List<Hero> getAllHeroes() {
         return heroRepository.findAll();
+    }
+
+//    SAVE FROM POST
+    @Transactional
+    public Hero saveHeroFromDTO(HeroDTO dto) {
+        Optional<Hero> existingHero = heroRepository.findByName(dto.name());
+        if (existingHero.isEmpty()) {
+            double realHp = dto.health() + dto.shield() + dto.armor();
+            if (dto.hp() != realHp) {
+                throw new BadReqException("La somma dei campi vita, armor e shield è diversa dagli hp dichiarati, correggi e riprova");
+            }
+            Hero heroToSave = new Hero();
+
+            heroToSave.setName(dto.name());
+            heroToSave.setHp(realHp);
+            heroToSave.setHealth(dto.health());
+            heroToSave.setShield(dto.shield());
+            heroToSave.setArmor(dto.armor());
+            heroToSave.setImage(dto.image());
+
+            try {
+                heroToSave.setRole(HeroRole.valueOf(dto.role().toUpperCase()));
+            } catch (Exception e) {
+                throw new BadReqException("Ruolo: " + dto.role() + " non valido, inserire un valore tra DAMAGE, TANK, SUPPORT");
+            }
+
+            if (dto.skills() != null) {
+                heroToSave.setSkills(dto.skills().stream().map(skillDTO -> {
+                    Skill s = new Skill();
+                    s.setName(skillDTO.name());
+                    s.setDescription(skillDTO.description());
+                    s.setDamage(skillDTO.damage());
+                    s.setHealing(skillDTO.healing());
+                    s.setDuration(skillDTO.duration());
+                    s.setCooldown(skillDTO.cooldown());
+                    s.setRange(skillDTO.range());
+                    s.setHero(heroToSave);
+                    return s;
+                }).toList());
+            }
+
+            if (dto.weapons() != null) {
+                heroToSave.setWeapons(dto.weapons().stream().map(weaponDTO -> {
+                    Weapon w = new Weapon();
+                    w.setName(weaponDTO.name());
+                    w.setDescription(weaponDTO.description());
+                    w.setMaxDmg(weaponDTO.maxDmg());
+                    w.setMinDmg(weaponDTO.minDmg());
+                    try {
+                        w.setWeaponType(WeaponType.valueOf(weaponDTO.weaponType().toUpperCase()));
+                    } catch (Exception e) {
+                        throw new BadReqException("WeaponType: " + weaponDTO.weaponType() + " non valido, inserisci un valore tra BEAM,HITSCAN,PROJECTILE,MELEE");
+                    }
+                    w.setHero(heroToSave);
+                    return w;
+                }).toList());
+            }
+            if (dto.ultimates() != null) {
+                heroToSave.setUltimates(dto.ultimates().stream().map(ultimateDTO -> {
+                    Ultimate u = new Ultimate();
+                    u.setName(ultimateDTO.name());
+                    u.setDescription(ultimateDTO.description());
+                    u.setDamage(ultimateDTO.damage());
+                    u.setHealing(ultimateDTO.healing());
+                    u.setDuration(ultimateDTO.duration());
+                    u.setRange(ultimateDTO.range());
+                    u.setCost(ultimateDTO.cost());
+                    u.setHero(heroToSave);
+                    return u;
+                }).toList());
+            }
+
+            if (dto.perks() != null) {
+                heroToSave.setPerks(dto.perks().stream().map(perkDTO -> {
+                    Perk p = new Perk();
+                    p.setName(perkDTO.name());
+                    p.setDescription(perkDTO.description());
+                    try {
+                        p.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
+                    } catch (Exception e) {
+                        throw new BadReqException("PerkType: " + perkDTO.perkType() + " non valido, inserisci un valore tra MAJOR e MINOR");
+                    }
+                    p.setHero(heroToSave);
+                    return p;
+                }).toList());
+            }
+
+            if (dto.passive() != null) {
+                List<Passive> passiveList = new ArrayList<>();
+                for (PassiveDTO passiveDTO : dto.passive()) {
+                    Passive passive = passiveRepository.findByName(passiveDTO.name()).orElseGet(() -> {
+                        Passive newPassive = new Passive();
+                        newPassive.setName(passiveDTO.name());
+                        newPassive.setDescription(passiveDTO.description());
+                        return passiveRepository.save(newPassive);
+                    });
+                    passiveList.add(passive);
+                }
+                heroToSave.setPassive(passiveList);
+            }
+            System.out.println("Eroe " + heroToSave.getName() + " salvato!");
+            return heroRepository.save(heroToSave);
+        }
+        else {
+            throw new BadReqException("L'eroe: " + dto.name() + " è già presente!");
+        }
     }
 }

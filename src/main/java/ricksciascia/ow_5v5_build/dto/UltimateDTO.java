@@ -13,19 +13,19 @@ public record UltimateDTO(
         @Size(min = 5, message = "Il campo descrizione della Ultimate deve essere minimo 5 caratteri")
         String description,
         @NotNull
-        @Min(value = 0, message = "il campo damage deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo damage della Ultimate deve essere un valore come minimo 0")
         Double damage,
         @NotNull
-        @Min(value = 0, message = "il campo healing deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo healing della Ultimate deve essere un valore come minimo 0")
         Double healing,
         @NotNull
-        @Min(value = 0, message = "il campo duration deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo duration della Ultimate deve essere un valore come minimo 0")
         Double duration,
         @NotNull
-        @Min(value = 0, message = "il campo range deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo range della Ultimate deve essere un valore come minimo 0")
         Double range,
         @NotNull
-        @Min(value = 0, message = "il campo cost deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo cost della Ultimate deve essere un valore come minimo 0")
         Double cost
 ) {
 

@@ -13,10 +13,10 @@ public record WeaponDTO(
         @Size(min = 5, message = "Il campo descrizione della Weapon deve essere minimo 5 caratteri")
         String description,
         @NotNull
-        @Min(value = 0, message = "il campo maxDmg deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo maxDmg della Weapon deve essere un valore come minimo 0")
         Double maxDmg,
         @NotNull
-        @Min(value = 0, message = "il campo minDmg deve essere un valore come minimo 0")
+        @Min(value = 0, message = "il campo minDmg della Weapon deve essere un valore come minimo 0")
         Double minDmg,
         @NotBlank(message = "Il weaponType è un campo obbligatorio")
         String weaponType
