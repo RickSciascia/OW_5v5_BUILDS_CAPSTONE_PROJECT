@@ -3,6 +3,7 @@ package ricksciascia.ow_5v5_build.runners;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import ricksciascia.ow_5v5_build.dto.HeroDTO;
 import ricksciascia.ow_5v5_build.entities.Hero;
 import ricksciascia.ow_5v5_build.services.HeroService;
 import tools.jackson.core.type.TypeReference;
@@ -27,10 +28,14 @@ public class HeroDataImporter implements CommandLineRunner {
                 System.out.println("File heroes.json non trovato nella cartella resources!");
             }
 //           L'ObjectMapper Legge il file e crea automaticamente una List<Hero> grazie a TypeReference che gli dice crea proprio una lista di oggetti Hero
-            List<Hero> heroList = objMapper.readValue(inputStream, new TypeReference<List<Hero>>() {
+            List<HeroDTO> heroList = objMapper.readValue(inputStream, new TypeReference<List<HeroDTO>>() {
             });
-            for(Hero hero : heroList) {
-                heroService.saveHero(hero);
+            for(HeroDTO heroDTO : heroList) {
+                try {
+                    heroService.saveHeroFromDTO(heroDTO);
+                } catch(Exception e) {
+                    System.out.println("L'Eroe: " + heroDTO.name() + " era già presente");
+                }
             }
             System.out.println("Caricamento dati completato!");
         } catch (Exception ex) {

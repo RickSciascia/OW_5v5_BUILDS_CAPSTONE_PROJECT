@@ -27,7 +27,10 @@ public record HeroDTO(
         @NotNull
         @Min(value = 0, message = "i punti armor non possono essere negativi")
         Double armor,
+        @NotBlank(message = "L'immagine eroe è un campo obbligatorio")
         String image,
+        @NotBlank(message = "L'immagine del ritratto eroe è un campo obbligatorio")
+        String portraitImage,
         @NotNull(message = "la lista armi non può essere nulla")
         @Size(min = 1, message = "L'eroe deve avere almeno un'arma")
         @Valid

@@ -13,6 +13,7 @@ public class Weapon {
     private String description;
     private Double maxDmg;
     private Double minDmg;
+    private String weaponImage;
     @Enumerated(EnumType.STRING)
     private WeaponType weaponType;
     @ManyToOne
@@ -22,12 +23,13 @@ public class Weapon {
 
     public Weapon(){}
 
-    public Weapon(String name, String description, Double maxDmg, Double minDmg, WeaponType weaponType) {
+    public Weapon(String name, String description, Double maxDmg, Double minDmg, WeaponType weaponType, String weaponImage) {
         this.name = name;
         this.description = description;
         this.maxDmg = maxDmg;
         this.minDmg = minDmg;
         this.weaponType = weaponType;
+        this.weaponImage = weaponImage;
     }
 
     public Long getId() {
@@ -80,5 +82,13 @@ public class Weapon {
 
     public void setHero(Hero hero) {
         this.hero = hero;
+    }
+
+    public String getWeaponImage() {
+        return weaponImage;
+    }
+
+    public void setWeaponImage(String weaponImage) {
+        this.weaponImage = weaponImage;
     }
 }

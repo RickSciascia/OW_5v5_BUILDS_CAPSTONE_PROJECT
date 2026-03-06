@@ -16,13 +16,14 @@ public class Skill {
     private Double duration;
     private Double cooldown;
     private Double range;
+    private String skillImage;
     @ManyToOne
     @JoinColumn(name = "hero_id")
     @JsonBackReference
     private Hero hero;
 
     public Skill(){}
-    public Skill(String name, String description, Double damage, Double healing, Double duration, Double cooldown, Double range) {
+    public Skill(String name, String description, Double damage, Double healing, Double duration, Double cooldown, Double range, String skillImage) {
         this.name = name;
         this.description = description;
         this.damage = damage;
@@ -30,6 +31,7 @@ public class Skill {
         this.duration = duration;
         this.cooldown = cooldown;
         this.range = range;
+        this.skillImage = skillImage;
     }
 
     public Long getId() {
@@ -98,5 +100,13 @@ public class Skill {
 
     public void setHero(Hero hero) {
         this.hero = hero;
+    }
+
+    public String getSkillImage() {
+        return skillImage;
+    }
+
+    public void setSkillImage(String skillImage) {
+        this.skillImage = skillImage;
     }
 }

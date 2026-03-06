@@ -21,6 +21,7 @@ public class Hero {
     private Double shield;
     private Double armor;
     private String image;
+    private String portraitImage;
 
     @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL)
     @JsonManagedReference
@@ -50,6 +51,7 @@ public class Hero {
                 Double shield,
                 Double armor,
                 String image,
+                String portraitImage,
                 List<Weapon> weaponList,
                 List<Skill> skillsList,
                 List<Perk> perksList,
@@ -62,6 +64,7 @@ public class Hero {
         this.shield = shield;
         this.armor = armor;
         this.image = image;
+        this.portraitImage = portraitImage;
         this.weapons = weaponList;
         this.skills = skillsList;
         this.perks = perksList;
@@ -167,5 +170,13 @@ public class Hero {
 
     public void setPassive(List<Passive> passive) {
         this.passive = passive;
+    }
+
+    public String getPortraitImage() {
+        return portraitImage;
+    }
+
+    public void setPortraitImage(String portraitImage) {
+        this.portraitImage = portraitImage;
     }
 }

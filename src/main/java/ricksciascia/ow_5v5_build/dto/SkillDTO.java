@@ -26,6 +26,8 @@ public record SkillDTO(
         Double cooldown,
         @NotNull
         @Min(value = 0, message = "il campo range della Skill deve essere un valore come minimo 0")
-        Double range
+        Double range,
+        @NotBlank(message = "il campo immagine della Skill è obbligatorio")
+        String skillImage
 ) {
 }

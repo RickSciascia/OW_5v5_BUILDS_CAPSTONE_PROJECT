@@ -26,7 +26,9 @@ public record UltimateDTO(
         Double range,
         @NotNull
         @Min(value = 0, message = "il campo cost della Ultimate deve essere un valore come minimo 0")
-        Double cost
+        Double cost,
+        @NotBlank(message = "il campo immagine della Ultimate è obbligatorio")
+        String ultimateImage
 ) {
 
 }

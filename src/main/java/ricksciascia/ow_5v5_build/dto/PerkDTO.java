@@ -11,6 +11,8 @@ public record PerkDTO(
         @Size(min = 5, message = "La descrizione del Perk deve essere minimo 5 caratteri")
         String description,
         @NotBlank(message = "Il tipo di perk è obbligatorio")
-        String perkType
+        String perkType,
+        @NotBlank(message = "il campo immagine del Perk è obbligatorio")
+        String perkImage
 ) {
 }

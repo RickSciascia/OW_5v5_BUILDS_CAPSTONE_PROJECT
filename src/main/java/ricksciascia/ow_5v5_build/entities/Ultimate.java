@@ -16,13 +16,14 @@ public class Ultimate {
     private Double duration;
     private Double range;
     private Double cost;
+    private String ultimateImage;
     @ManyToOne
     @JoinColumn(name = "hero_id")
     @JsonBackReference
     private Hero hero;
 
     public Ultimate(){}
-    public Ultimate(String name, String description, Double damage, Double healing, Double duration, Double range, Double cost) {
+    public Ultimate(String name, String description, Double damage, Double healing, Double duration, Double range, Double cost, String ultimateImage) {
         this.name = name;
         this.description = description;
         this.damage = damage;
@@ -30,6 +31,7 @@ public class Ultimate {
         this.duration = duration;
         this.range = range;
         this.cost = cost;
+        this.ultimateImage = ultimateImage;
     }
 
     public Long getId() {
@@ -98,5 +100,13 @@ public class Ultimate {
 
     public void setHero(Hero hero) {
         this.hero = hero;
+    }
+
+    public String getUltimateImage() {
+        return ultimateImage;
+    }
+
+    public void setUltimateImage(String ultimateImage) {
+        this.ultimateImage = ultimateImage;
     }
 }

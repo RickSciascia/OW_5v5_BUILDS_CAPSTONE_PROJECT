@@ -11,6 +11,7 @@ public class Perk {
     private Long id;
     private String name;
     private String description;
+    private String perkImage;
     @Enumerated(EnumType.STRING)
     private PerkType perkType;
     @ManyToOne
@@ -19,10 +20,11 @@ public class Perk {
     private Hero hero;
 
     public Perk(){}
-    public Perk(String name, String description, PerkType perkType) {
+    public Perk(String name, String description, PerkType perkType, String image) {
         this.name = name;
         this.description = description;
         this.perkType = perkType;
+        this.perkImage = image;
     }
 
     public Long getId() {
@@ -58,5 +60,13 @@ public class Perk {
 
     public void setHero(Hero hero) {
         this.hero = hero;
+    }
+
+    public String getPerkImage() {
+        return perkImage;
+    }
+
+    public void setPerkImage(String perkImage) {
+        this.perkImage = perkImage;
     }
 }

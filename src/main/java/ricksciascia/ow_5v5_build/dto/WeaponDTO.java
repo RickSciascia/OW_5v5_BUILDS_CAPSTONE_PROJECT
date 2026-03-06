@@ -19,6 +19,8 @@ public record WeaponDTO(
         @Min(value = 0, message = "il campo minDmg della Weapon deve essere un valore come minimo 0")
         Double minDmg,
         @NotBlank(message = "Il weaponType è un campo obbligatorio")
-        String weaponType
+        String weaponType,
+        @NotBlank(message = "il campo immagine della Weapon è obbligatorio")
+        String weaponImage
 ) {
 }

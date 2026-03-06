@@ -6,21 +6,24 @@
     "health": 250,
     "shield": 0,
     "armor": 0,
-    "image": "https://placeholder.com/images/anran.png",
+    "image": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/0/07/OW2_Anran.png/revision/latest/scale-to-width-down/1000",
+    "portraitImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2cdf460c6080a031258e513713d1d635a8e68799cb5d7e27774be8963e95f6a3.png",
     "weapons": [
       {
         "name": "Ventagli Zhuque",
         "description": "Ventagli che sparano proiettili infuocati.",
         "maxDmg": 44,
         "minDmg": 44,
-        "weaponType": "PROJECTILE"
+        "weaponType": "PROJECTILE",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/b575eb7daebdb64b81b0942c466b00117b31925678d10ab8739781e0ccf1bd69.png"
       },
       {
         "name": "Fiammata",
         "description": "Folata di vento caldo che amplifica i danni da fuoco.",
         "maxDmg": 60,
         "minDmg": 30,
-        "weaponType": "BEAM"
+        "weaponType": "BEAM",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/66ed3af8219952edc022c4ef08c65191cdd6839aae0a2c451f70f8f61d2bc7de.png"
       }
     ],
     "skills": [
@@ -31,7 +34,8 @@
         "healing": 0,
         "duration": 1.3,
         "cooldown": 8.0,
-        "range": 23.4
+        "range": 23.4,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/92cd63b84d95581dfbe8c3974be31c9f303db4d25bfd117474f93ab5bc9cca4b.png"
       },
       {
         "name": "Fiamma Danzante",
@@ -40,29 +44,34 @@
         "healing": 0,
         "duration": 0.8,
         "cooldown": 8.0,
-        "range": 8.0
+        "range": 8.0,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c8a106a2acae1b9edf47495af102cf17fd7e8320c76b201d533f5723afc45d14.png"
       }
     ],
     "perks": [
       {
         "name": "Ardere",
         "description": "I nemici incendiati bruciano per 1,5 secondi in più.",
-        "perkType": "MINOR"
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/e/e0/Perk_Smoulder.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Scudo Termico",
         "description": "Fornisce 50 salute extra quando usi la tua Ultra e per ogni nemico che manda in fiamme.",
-        "perkType": "MINOR"
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/7/7a/Perk_Heat_Shield.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Miccia Corta",
         "description": "Colpire un nemico con Scatto Infernale riduce il cooldown di 1,5s.",
-        "perkType": "MAJOR"
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/53/Perk_Short_Fuse.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Fiamma Vorace",
         "description": "Fornisce 50 salute per ogni nemico colpito da Fiamma Danzante.",
-        "perkType": "MAJOR"
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/f1/Perk_Hungering_Blaze.png/revision/latest/scale-to-width-down/100"
       }
     ],
     "ultimates": [
@@ -73,7 +82,8 @@
         "healing": 0,
         "duration": 3.0,
         "range": 10,
-        "cost": 2000
+        "cost": 2000,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a7f971f4e0c7c898e634d0787f4a0da48ae78b7adbdc7b71149efa0352319c76.png"
       },
       {
         "name": "Rinascita Vermiglia",
@@ -82,17 +92,20 @@
         "healing": 0,
         "duration": 3.0,
         "range": 7,
-        "cost": 2000
+        "cost": 2000,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9060d9e2e407a31ab95948e6512373a4318ebd8883aefa91e9f2fa9bbffb7076.png"
       }
     ],
     "passive": [
       {
         "name": "Accensione",
-        "description": "Colpisce i nemici con attacchi di fuoco per bruciarli."
+        "description": "Colpisce i nemici con attacchi di fuoco per bruciarli.",
+        "passiveImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/f4a70d5eacbfa0f6e8290ad352df6e06e72e5dc755ecc650e120697bf59fa7ad.png"
       },
       {
         "name": "Ruolo Secondario: Fiancheggiatore",
-        "description": "I Medikit ripristinano più salute."
+        "description": "I Medikit ripristinano più salute.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/d/d2/Sub-Role_Damage_Flanker_Circle.svg/revision/latest"
       }
     ]
   },
@@ -103,21 +116,24 @@
     "health": 325,
     "shield": 0,
     "armor": 325,
-    "image": "https://placeholder.com/images/dva.png",
+    "image": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/a/af/OW_Dva.png/revision/latest",
+    "portraitImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/df5a5532862d9292634fb3dc0e51a4705aa601de65e5e815513ccc663d84de56.png",
     "weapons": [
       {
         "name": "Cannoni a fusione",
         "description": "Armi automatiche a corto raggio e ampia rosata.",
         "maxDmg": 22,
         "minDmg": 6.6,
-        "weaponType": "HITSCAN"
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1b8dd81bd8353ce0a66009578dc4d7b6a51464e5bc7898010053ff46159f4fa1.png"
       },
       {
         "name": "Pistola Laser",
         "description": "Arma automatica.",
         "maxDmg": 14,
         "minDmg": 14,
-        "weaponType": "PROJECTILE"
+        "weaponType": "PROJECTILE",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/969a72050f376bf6ee5ed5550a8033cdd661f2f9883c1229e9ee70dd3ae58ec4.png"
       }
     ],
     "skills": [
@@ -128,7 +144,8 @@
         "healing": 0,
         "duration": 2,
         "cooldown": 3.5,
-        "range": 35
+        "range": 35,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7076c739fe2c1d11f4f118d9e22a3d8f66303242434b71a7e4451e62f5d27b65.png"
       },
       {
         "name": "Matrice difensiva",
@@ -137,7 +154,8 @@
         "healing": 0,
         "duration": 3,
         "cooldown": 1.0,
-        "range": 10.3
+        "range": 10.3,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/e3806878b38cbab585c4d48e05f2dd63817a36a4f69cedbaf62fd3af6ca5bbd2.png"
       },
       {
         "name": "Micromissili",
@@ -146,29 +164,34 @@
         "healing": 0,
         "duration": 1.6,
         "cooldown": 7.0,
-        "range": 1.5
+        "range": 1.5,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/adcd1c898f2ab66779554711451303ee83ca15b70a0951e18964520f5f02566a.png"
       }
     ],
     "perks": [
       {
         "name": "Potere del coniglio",
         "description": "Espulsione! fornisce 75 salute extra temporanea e l'area di danno di Richiama Mech aumenta del 50%.",
-        "perkType": "MINOR"
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/5c/Bunny_Power.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Retrorazzi prolungati",
         "description": "Colpire un nemico con Retrorazzi infligge il 40% di danni in più e ne aumenta la durata di 0.5 secondi.",
-        "perkType": "MINOR"
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/3/3a/Extended_Boosters.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Sistema scudo",
         "description": "Converte 150 salute in scudi. Matrice difensiva ripristina gli scudi per il 25% dei danni che assorbe.",
-        "perkType": "MAJOR"
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/e/ee/Perk_ShieldSystem.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Fusione di precisione",
         "description": "Premi tasto ricarica per ridurre la rosa di Cannoni a Fusione del 75% per 3 secondi.",
-        "perkType": "MAJOR"
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/fa/Precision_Fusion.png/revision/latest/scale-to-width-down/100"
       }
     ],
     "ultimates": [
@@ -179,7 +202,8 @@
         "healing": 0,
         "duration": 3.0,
         "range": 21,
-        "cost": 1700
+        "cost": 1700,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3ae91694dd2901ced5b3c6789b686fbda4175f807abe602101df6a26bfdf3491.png"
       },
       {
         "name": "Richiama Mech",
@@ -188,21 +212,25 @@
         "healing": 0,
         "duration": 3.0,
         "range": 3,
-        "cost": 280
+        "cost": 280,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7117851e322ccefb98a710f926daffe1aabee9d47662c26d35c938c633897e71.png"
       }
     ],
     "passive": [
       {
         "name": "Espulsione!",
-        "description": "Ti catapulti fuori dal mech quando viene distrutto."
+        "description": "Ti catapulti fuori dal mech quando viene distrutto.",
+        "passiveImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/3aa95031ecc236c99d902971910edece23982e95743630e949b1259ba48f5c63.png"
       },
       {
         "name": "Ruolo: Tank",
-        "description": "La carica della Ultra tramite cure e danni subiti è ridotta. Aumenta la salute base nelle modalità in coda ruoli."
+        "description": "La carica della Ultra tramite cure e danni subiti è ridotta. Aumenta la salute base nelle modalità in coda ruoli.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/c/c8/Role_Tank_Circle.svg/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Ruolo Secondario: Aggressore",
-        "description": "Restare in aria fornisce cure nel tempo."
+        "description": "Restare in aria fornisce cure nel tempo.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/4/47/Sub-Role_Tank_Initiator_Circle.svg/revision/latest/scale-to-width-down/100"
       }
     ]
   },
@@ -213,21 +241,24 @@
     "health": 75,
     "shield": 150,
     "armor": 0,
-    "image": "https://placeholder.com/images/juno.png",
+    "image": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/2/21/OW2_Juno.png/revision/latest",
+    "portraitImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c0167d251e57b0aa2b1e16c37d87f0e7c77263db9dd0503d77b5f2589bf3e4a0.png",
     "weapons": [
       {
         "name": "Mediblaster (Cura)",
         "description": "Arma a raffica che cura gli alleati e infligge i danni ai nemici.",
         "maxDmg": 72,
         "minDmg": 21.6,
-        "weaponType": "HITSCAN"
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/d75b0943dbbf45729efb48ab3d40bef9de9e4742d208f887d57ed9fd75d4ed9e.png"
       },
       {
         "name": "Mediblaster (Danni)",
         "description": "Arma a raffica che cura gli alleati e infligge i danni ai nemici.",
         "maxDmg": 90,
         "minDmg": 27,
-        "weaponType": "HITSCAN"
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/d75b0943dbbf45729efb48ab3d40bef9de9e4742d208f887d57ed9fd75d4ed9e.png"
       }
     ],
     "skills": [
@@ -238,7 +269,8 @@
         "healing": 85,
         "duration": 4,
         "cooldown": 10.0,
-        "range": 40
+        "range": 40,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/24ad567c5400d4eb7a5d7b9f938a197654e5465dfd2e881754e8f4f699f84088.png"
       },
       {
         "name": "Planata Potenziata",
@@ -247,7 +279,8 @@
         "healing": 0,
         "duration": 4,
         "cooldown": 6.0,
-        "range": 33
+        "range": 33,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/39ea7b359006e25f0b6d373c87e690209c9daefed5196b51f945f3d1a2743af0.png"
       },
       {
         "name": "Anello sonico",
@@ -256,29 +289,34 @@
         "healing": 0,
         "duration": 6,
         "cooldown": 14,
-        "range": 17.5
+        "range": 17.5,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/bfdddb5d1857a8a13713381d3fe6cc6b690f71efef9131147116adc10b00d245.png"
       }
     ],
     "perks": [
       {
         "name": "Segni vitali familiari",
         "description": "I Siluri Pulsar agganciano gli alleati il 35% più velocemente.",
-        "perkType": "MINOR"
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/0/0f/Perk_FamiliarVitals.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Sotto tiro",
         "description": "Riduce il tempo di recupero di Siluri Pulsar di 1 secondo per ogni nemico colpito.",
-        "perkType": "MINOR"
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/0/04/Locked_On.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Volo",
         "description": "Gli Stivali Marziani consentono di effettuare un salto triplo.",
-        "perkType": "MAJOR"
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/83/Perk_Lift_Off.png/revision/latest/scale-to-width-down/100"
       },
       {
         "name": "Velociblaster",
         "description": "Finché Planata Potenziata è attiva, Mediblaster continua a sparare.",
-        "perkType": "MAJOR"
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/14/Perk_Faster_Blaster.png/revision/latest/scale-to-width-down/100"
       }
     ],
     "ultimates": [
@@ -289,17 +327,210 @@
         "healing": 680,
         "duration": 8.0,
         "range": 8,
-        "cost": 2900
+        "cost": 2900,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/5723182cddc6719ee19a5b35d840d2fb3ed933c861f3f66514d66fc29630c84a.png"
       }
     ],
     "passive": [
       {
         "name": "Stivali Marziani",
-        "description": "Mentre sei in aria, premi il tasto per saltare per eseguire un doppio salto e poi tienilo premuto per fluttuare."
+        "description": "Mentre sei in aria, premi il tasto per saltare per eseguire un doppio salto e poi tienilo premuto per fluttuare.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/e/ed/Ability-Juno1.png/revision/latest"
       },
       {
         "name": "Ruolo Secondario: Superstite",
-        "description": "Le abilità di movimento attivano la rigenerazione passiva della salute."
+        "description": "Le abilità di movimento attivano la rigenerazione passiva della salute.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/2/22/Sub-Role_Support_Survivor_Circle.svg/revision/latest"
+      }
+    ]
+  },
+  {
+    "name": "Widowmaker",
+    "role": "DAMAGE",
+    "hp": 225,
+    "health": 225,
+    "shield": 0,
+    "armor": 0,
+    "image": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/a/ab/OW2_Widowmaker.png/revision/latest",
+    "portraitImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/6e4702b45f196aaf51555cf57327322721f45458b17f5f0643ed008a88378259.png",
+    "weapons": [
+      {
+        "name": "Bacio della vedova",
+        "description": "Fucile automatico d'assalto.",
+        "maxDmg": 14,
+        "minDmg": 4.2,
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/da5b161187088a765de4a40df65e8737bd9b6b09c896c9cc960f8fa322a78f22.png"
+      },
+      {
+        "name": "Bacio della vedova (Mira precisa)",
+        "description": "Tieni premuto il tasto per mirare per attivare la modalità di precisione. L'arma passa da fuoco automatico a colpo singolo consumando 5 colpi del caricatore per ogni singolo colpo sparato in modalità Mira Precisa, Moltiplicatore 2,5x per colpi critici",
+        "maxDmg": 120,
+        "minDmg": 6,
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/da5b161187088a765de4a40df65e8737bd9b6b09c896c9cc960f8fa322a78f22.png"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Rampino",
+        "description": "Lanci un rampino per raggiungere una sporgenza.",
+        "damage": 0,
+        "healing": 0,
+        "duration": 2,
+        "cooldown": 10.0,
+        "range": 20.0,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9984591b905b66ab69c48c04e2f2829e32ffce04941b57403f1ec21c125fe573.png"
+      },
+      {
+        "name": "Mina Venefica",
+        "description": "Lanci una trappola velenosa",
+        "damage": 125,
+        "healing": 0,
+        "duration": 5.0,
+        "cooldown": 15.0,
+        "range": 4.0,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/800b4cd6b00024479ac681dc160a50030a3883a334499da6c6918d7c239bec55.png"
+      }
+    ],
+    "perks": [
+      {
+        "name": "Precisione Letale",
+        "description": "I colpi mirati consumano 3 munizioni invece di 5",
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/c/cb/Perk_ScopedEfficiency.png/revision/latest/scale-to-width-down/100"
+      },
+      {
+        "name": "Istinto del cecchino",
+        "description": "I colpi mirati si ricaricano del 100% più velocemente per 2 secondi dopo aver utilizzato Rampino.",
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/f/f1/Perk_Sniper%27s_Instinct.png/revision/latest/scale-to-width-down/100"
+      },
+      {
+        "name": "Mina a ricerca",
+        "description": "Mina venefica ora spara dardi velenosi ai nemici entro 10 metri, e resta attivo dopo l'attivazione",
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/a/a8/Perk_Seeker_Mine.png/revision/latest/scale-to-width-down/100"
+      },
+      {
+        "name": "Morso della vedova",
+        "description": "I colpi mirati possono caricarsi fino al 125% perforando i nemici quando sono carichi al massimo.",
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/58/Perk_Widow%27s_Bite.png/revision/latest/scale-to-width-down/100"
+      }
+    ],
+    "ultimates": [
+      {
+        "name": "Visore Termico",
+        "description": "Permette alla tua squadra di visualizzare la posizione del nemico.",
+        "damage": 0,
+        "healing": 0,
+        "duration": 15.0,
+        "range": 1000,
+        "cost": 1400,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7f5d2bca0cdf2d33170ed1253344059db14755fc69efb524d19cebb4f3dc2903.png"
+      }
+    ],
+    "passive": [
+      {
+        "name": "Ruolo Secondario: Tiratore Scelto",
+        "description": "I colpi critici riducono i tempi di recupero della tua abilità di movimento.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/58/Sub-Role_Damage_Sharpshooter_Circle.svg/revision/latest/"
+      }
+    ]
+  },
+  {
+    "name": "Ashe",
+    "role": "DAMAGE",
+    "hp": 250,
+    "health": 250,
+    "shield": 0,
+    "armor": 0,
+    "image": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/8/89/OW2_Ashe.png/revision/latest",
+    "portraitImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4076bbaa2eb52a0bfe612434071e56e7702d5454473dbbea2f9e392a9d997a94.png",
+    "weapons": [
+      {
+        "name": "Vipera",
+        "description": "Fucile semiautomatico.",
+        "maxDmg": 35,
+        "minDmg": 10.5,
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1e5c0d3360d2357d28d4c5eacb6727589ac3d4ca99b09e3f8fd67846b6b2ef4e.png"
+      },
+      {
+        "name": "Vipera (Mira precisa)",
+        "description": "Tieni premuto il tasto per mirare per attivare la modalità di precisione: danni e precisione aumentano a discapito della cadenza di fuoco.",
+        "maxDmg": 75,
+        "minDmg": 22.5,
+        "weaponType": "HITSCAN",
+        "weaponImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/1e5c0d3360d2357d28d4c5eacb6727589ac3d4ca99b09e3f8fd67846b6b2ef4e.png"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Doppietta",
+        "description": "Respinge indietro Ashe e i nemici di fronte a lei.",
+        "damage": 90,
+        "healing": 0,
+        "duration": 0,
+        "cooldown": 10.0,
+        "range": 20.0,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/834538cfbc7c2eb7f9fd18aea7ba91264446af706199d716526060e6e34b48ed.png"
+      },
+      {
+        "name": "Dinamite",
+        "description": "Lanci un candelotto che esplode dopo breve tempo o immediatamente, se colpito.",
+        "damage": 150,
+        "healing": 0,
+        "duration": 5.0,
+        "cooldown": 12.0,
+        "range": 5.0,
+        "skillImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/0e2cc18253fc824f3eac3df4623dfb03210937e27901cc868a8694a4a65e68ad.png"
+      }
+    ],
+    "perks": [
+      {
+        "name": "Detonatore a distanza",
+        "description": "Dopo aver utilizzato Dinamite, premere nuovamente il tasto ad esso legato provoca la sua detonazione dopo un ritardo di 0.5 secondi.",
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/3/34/Remote_Detonator.png/revision/latest/scale-to-width-down/100"
+      },
+      {
+        "name": "Doppietta doppia",
+        "description": "Se respingi un nemico con Doppietta, puoi usarla di nuovo subito dopo con il 25% di respinta in meno.",
+        "perkType": "MINOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/17/Perk_Double-Barreled.png/revision/latest/scale-to-width-down/100"
+      },
+      {
+        "name": "Morso della Vipera",
+        "description": "Mettere a segno 2 colpi mirati consecutivi su un bersaglio gli infligge 25 danni extra e ricarica 1 munizione.",
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/2/2e/Perk_VipersSting.png/revision/latest/scale-to-width-down/100"
+      },
+      {
+        "name": "Esplosione Aerea",
+        "description": "Dinamite ha un raggio di detonazione aumentato del 40% in aria e rimborsa 3 munizioni quando viene lanciata.",
+        "perkType": "MAJOR",
+        "perkImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/9/91/Perk_Airburst.png/revision/latest/scale-to-width-down/100"
+      }
+    ],
+    "ultimates": [
+      {
+        "name": "B.O.B.",
+        "description": "Chiami B.O.B., che carica in avanti respingendo i nemici in aria per poi attaccare con la sua artiglieria.",
+        "damage": 1360,
+        "healing": 0,
+        "duration": 10.0,
+        "range": 40,
+        "cost": 2450,
+        "ultimateImage": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/224dd7fd039ee71e2633520cac81186fddabe4d399a64650263514829b936295.png"
+      }
+    ],
+    "passive": [
+      {
+        "name": "Ruolo Secondario: Tiratore Scelto",
+        "description": "I colpi critici riducono i tempi di recupero della tua abilità di movimento.",
+        "passiveImage": "https://static.wikia.nocookie.net/overwatch_gamepedia/images/5/58/Sub-Role_Damage_Sharpshooter_Circle.svg/revision/latest/"
       }
     ]
   }

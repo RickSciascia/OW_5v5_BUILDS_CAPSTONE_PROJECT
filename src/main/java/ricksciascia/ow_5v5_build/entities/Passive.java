@@ -15,15 +15,17 @@ public class Passive {
     private Long id;
     private String name;
     private String description;
+    private String passiveImage;
 
     @ManyToMany(mappedBy = "passive")
     @JsonIgnoreProperties("passive")
     private List<Hero> heroList = new ArrayList<>();
 
     public Passive(){}
-    public Passive(String name, String description){
+    public Passive(String name, String description, String image){
         this.name = name;
         this.description = description;
+        this.passiveImage = image;
     }
 
     public Long getId() {
@@ -52,5 +54,13 @@ public class Passive {
 
     public void setHeroList(List<Hero> heroList) {
         this.heroList = heroList;
+    }
+
+    public String getPassiveImage() {
+        return passiveImage;
+    }
+
+    public void setPassiveImage(String passiveImage) {
+        this.passiveImage = passiveImage;
     }
 }

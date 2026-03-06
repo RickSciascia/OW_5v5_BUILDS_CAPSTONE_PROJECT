@@ -9,6 +9,8 @@ public record PassiveDTO(
         String name,
         @NotBlank(message = "La descrizione della passiva è obbligatorio")
         @Size(min = 5, message = "La descrizione della passiva deve essere minimo 5 caratteri")
-        String description
+        String description,
+        @NotBlank(message = "il campo immagine della passiva è obbligatorio")
+        String passiveImage
 ) {
 }

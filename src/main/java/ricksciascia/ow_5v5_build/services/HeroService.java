@@ -72,6 +72,7 @@ public class HeroService {
             heroToSave.setShield(dto.shield());
             heroToSave.setArmor(dto.armor());
             heroToSave.setImage(dto.image());
+            heroToSave.setPortraitImage(dto.portraitImage());
 
             try {
                 heroToSave.setRole(HeroRole.valueOf(dto.role().toUpperCase()));
@@ -89,6 +90,7 @@ public class HeroService {
                     s.setDuration(skillDTO.duration());
                     s.setCooldown(skillDTO.cooldown());
                     s.setRange(skillDTO.range());
+                    s.setSkillImage(skillDTO.skillImage());
                     s.setHero(heroToSave);
                     return s;
                 }).toList());
@@ -101,6 +103,7 @@ public class HeroService {
                     w.setDescription(weaponDTO.description());
                     w.setMaxDmg(weaponDTO.maxDmg());
                     w.setMinDmg(weaponDTO.minDmg());
+                    w.setWeaponImage(weaponDTO.weaponImage());
                     try {
                         w.setWeaponType(WeaponType.valueOf(weaponDTO.weaponType().toUpperCase()));
                     } catch (Exception e) {
@@ -120,6 +123,7 @@ public class HeroService {
                     u.setDuration(ultimateDTO.duration());
                     u.setRange(ultimateDTO.range());
                     u.setCost(ultimateDTO.cost());
+                    u.setUltimateImage(ultimateDTO.ultimateImage());
                     u.setHero(heroToSave);
                     return u;
                 }).toList());
@@ -130,6 +134,7 @@ public class HeroService {
                     Perk p = new Perk();
                     p.setName(perkDTO.name());
                     p.setDescription(perkDTO.description());
+                    p.setPerkImage(perkDTO.perkImage());
                     try {
                         p.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
                     } catch (Exception e) {
@@ -147,6 +152,7 @@ public class HeroService {
                         Passive newPassive = new Passive();
                         newPassive.setName(passiveDTO.name());
                         newPassive.setDescription(passiveDTO.description());
+                        newPassive.setPassiveImage(passiveDTO.passiveImage());
                         return passiveRepository.save(newPassive);
                     });
                     passiveList.add(passive);
