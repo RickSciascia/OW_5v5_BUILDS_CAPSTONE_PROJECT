@@ -9,15 +9,21 @@ public class Weapon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String description;
+    @Column(nullable = false)
     private Double maxDmg;
+    @Column(nullable = false)
     private Double minDmg;
+    @Column(nullable = false)
     private String weaponImage;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private WeaponType weaponType;
     @ManyToOne
-    @JoinColumn(name = "hero_id")
+    @JoinColumn(name = "hero_id", nullable = false)
     @JsonBackReference
     private Hero hero;
 

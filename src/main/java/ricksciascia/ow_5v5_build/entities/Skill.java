@@ -9,16 +9,24 @@ public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String description;
+    @Column(nullable = false)
     private Double damage;
+    @Column(nullable = false)
     private Double healing;
+    @Column(nullable = false)
     private Double duration;
+    @Column(nullable = false)
     private Double cooldown;
+    @Column(nullable = false)
     private Double range;
+    @Column(nullable = false)
     private String skillImage;
     @ManyToOne
-    @JoinColumn(name = "hero_id")
+    @JoinColumn(name = "hero_id", nullable = false)
     @JsonBackReference
     private Hero hero;
 

@@ -13,9 +13,12 @@ public class Hero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private HeroRole role;
+    @Column(nullable = false)
     private Double hp;
     private Double health;
     private Double shield;
@@ -23,22 +26,22 @@ public class Hero {
     private String image;
     private String portraitImage;
 
-    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Weapon> weapons = new ArrayList<>();
-    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Skill> skills = new ArrayList<>() ;
-    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Perk> perks = new ArrayList<>();
-    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Ultimate> ultimates = new ArrayList<>();
     @ManyToMany
     @JoinTable(name = "heroes_passive",
-    joinColumns = @JoinColumn(name = "hero_id"),
-    inverseJoinColumns = @JoinColumn(name = "passive_id"))
+    joinColumns = @JoinColumn(name = "hero_id", nullable = false),
+    inverseJoinColumns = @JoinColumn(name = "passive_id", nullable = false))
     @JsonIgnoreProperties("heroList")
     private List<Passive> passive = new ArrayList<>();
 

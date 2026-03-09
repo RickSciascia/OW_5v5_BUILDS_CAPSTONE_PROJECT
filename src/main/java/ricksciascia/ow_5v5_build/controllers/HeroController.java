@@ -39,4 +39,16 @@ public class HeroController {
             return this.heroService.saveHeroFromDTO(heroDto);
         }
     }
+
+//    --------------------- P U T ---------------------
+    @PutMapping("/{heroId}")
+    public Hero editHero(@RequestBody @Validated HeroDTO heroDTO, BindingResult validationRes, @PathVariable Long heroId){
+        if(validationRes.hasErrors()) {
+            List<String> errorsList = validationRes.getFieldErrors()
+                    .stream().map(fieldError -> fieldError.getDefaultMessage()).toList();
+        throw new ValException(errorsList);
+        } else {
+            return this.heroService.updateHeroById(heroId, heroDTO);
+        }
+    }
 }

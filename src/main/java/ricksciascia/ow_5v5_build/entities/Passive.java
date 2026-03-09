@@ -13,8 +13,11 @@ public class Passive {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String description;
+    @Column(nullable = false)
     private String passiveImage;
 
     @ManyToMany(mappedBy = "passive")

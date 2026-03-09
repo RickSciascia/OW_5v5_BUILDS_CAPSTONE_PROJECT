@@ -9,13 +9,17 @@ public class Perk {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String description;
+    @Column(nullable = false)
     private String perkImage;
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private PerkType perkType;
     @ManyToOne
-    @JoinColumn(name = "hero_id")
+    @JoinColumn(name = "hero_id", nullable = false)
     @JsonBackReference
     private Hero hero;
 
