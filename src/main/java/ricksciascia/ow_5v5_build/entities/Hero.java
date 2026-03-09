@@ -20,10 +20,15 @@ public class Hero {
     private HeroRole role;
     @Column(nullable = false)
     private Double hp;
+    @Column(nullable = false)
     private Double health;
+    @Column(nullable = false)
     private Double shield;
+    @Column(nullable = false)
     private Double armor;
+    @Column(nullable = false)
     private String image;
+    @Column(nullable = false)
     private String portraitImage;
 
     @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL, orphanRemoval = true)

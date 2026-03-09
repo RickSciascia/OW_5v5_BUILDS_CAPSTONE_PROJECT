@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ricksciascia.ow_5v5_build.dto.HeroDTO;
+import ricksciascia.ow_5v5_build.dto.HeroMinDTO;
 import ricksciascia.ow_5v5_build.entities.Hero;
 import ricksciascia.ow_5v5_build.exceptions.ValException;
 import ricksciascia.ow_5v5_build.services.HeroService;
@@ -50,5 +51,16 @@ public class HeroController {
         } else {
             return this.heroService.updateHeroById(heroId, heroDTO);
         }
+    }
+
+//    --------------------- G E T - G A L L E R Y ---------------------
+    @GetMapping("/gallery")
+    public List<HeroMinDTO> getHeroesForGallery() {
+        return heroService.getAllHeroesMin();
+    }
+//    --------------------- G E T - S I N G L E - H E R O ---------------------
+    @GetMapping("/{heroId}")
+    public Hero getHeroById(@PathVariable Long heroId) {
+        return heroService.findHeroById(heroId);
     }
 }

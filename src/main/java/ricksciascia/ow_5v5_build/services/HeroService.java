@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ricksciascia.ow_5v5_build.dto.HeroDTO;
+import ricksciascia.ow_5v5_build.dto.HeroMinDTO;
 import ricksciascia.ow_5v5_build.dto.PassiveDTO;
 import ricksciascia.ow_5v5_build.entities.*;
 import ricksciascia.ow_5v5_build.exceptions.BadReqException;
@@ -16,6 +17,7 @@ import ricksciascia.ow_5v5_build.repositories.HeroRepository;
 import ricksciascia.ow_5v5_build.repositories.PassiveRepository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -74,6 +76,21 @@ public class HeroService {
         if(page<0) page = 0;
         Pageable pageable = PageRequest.of(page,size, Sort.by(orderBy).ascending());
         return this.heroRepository.findAll(pageable);
+    }
+
+//    GET HERO MIN LIST FOR GALLERY PAGE
+    public List<HeroMinDTO> getAllHeroesMin() {
+        List<String> roleOrder = List.of("TANK","DAMAGE","SUPPORT");
+        return heroRepository.findAll().stream().map(hero -> new HeroMinDTO(
+                hero.getId(),
+                hero.getName(),
+                hero.getRole().toString(),
+                hero.getPortraitImage()
+        ))
+                .sorted(Comparator
+                        .comparing((HeroMinDTO hero) -> roleOrder.indexOf(hero.role()))
+                        .thenComparing(HeroMinDTO::name))
+                .toList();
     }
 
 //    SAVE FROM POST
@@ -187,6 +204,7 @@ public class HeroService {
             throw new BadReqException("L'eroe: " + dto.name() + " è già presente!");
         }
     }
+//    UPDATE HERO PUT
     @Transactional
     public Hero updateHeroById(Long heroId, HeroDTO heroDTO) {
         Hero heroFound = this.findHeroById(heroId);
