@@ -63,4 +63,10 @@ public class HeroController {
     public Hero getHeroById(@PathVariable Long heroId) {
         return heroService.findHeroById(heroId);
     }
+//    --------------------- D E L E T E ---------------------
+    @DeleteMapping("/{heroId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteHero(@PathVariable Long heroId) {
+        this.heroService.deleteHeroById(heroId);
+    }
 }

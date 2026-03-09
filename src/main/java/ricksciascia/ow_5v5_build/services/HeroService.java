@@ -321,4 +321,10 @@ public class HeroService {
         }
         else throw new BadReqException("Errore: l'eroe con id: " + heroId + " ha come nome: " + heroFound.getName() + " non puoi rinominarlo in: " + heroDTO.name());
     }
+//    DELETE
+    public void deleteHeroById(Long heroId) {
+        Hero heroFound = this.findHeroById(heroId);
+        System.out.println("L'eroe " + heroFound.getName()+ " è stato cancellato insieme a tutti i dati ad esso collegato");
+        heroRepository.delete(heroFound);
+    }
 }
