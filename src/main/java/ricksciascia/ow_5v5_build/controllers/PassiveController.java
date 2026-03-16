@@ -18,6 +18,7 @@ public class PassiveController {
         this.passiveService = passiveService;
     }
 
+    //    --------------------- G E T ---------------------
     @GetMapping
     public List<Passive> getPassive(){
         return passiveService.getAllPassive();
