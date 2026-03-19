@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ricksciascia.ow_5v5_build.dto.LoginDTO;
+import ricksciascia.ow_5v5_build.dto.LoginResponseDTO;
 import ricksciascia.ow_5v5_build.dto.UserDTO;
+import ricksciascia.ow_5v5_build.dto.UserResponseDTO;
 import ricksciascia.ow_5v5_build.entities.User;
 import ricksciascia.ow_5v5_build.entities.UserRole;
 import ricksciascia.ow_5v5_build.exceptions.BadReqException;
@@ -44,10 +46,19 @@ public class AuthService {
         return savedUser;
     }
 
-    public String checkCredentials(LoginDTO dto){
+    public LoginResponseDTO checkCredentials(LoginDTO dto){
         User userFound = this.userRepository.findByEmail(dto.email()).orElseThrow(()-> new NotFoundException("Credenziali errate!"));
         if(passwordEncoder.matches(dto.password(),userFound.getPassword())) {
-            return jwtTools.generateToken(userFound);
+            String accessToken = jwtTools.generateToken(userFound);
+            UserResponseDTO userAuthenticated = new UserResponseDTO(
+                    userFound.getId(),
+                    userFound.getUsername(),
+                    userFound.getEmail(),
+                    userFound.getRole().name(),
+                    userFound.getImage()
+            );
+
+            return new LoginResponseDTO(accessToken,userAuthenticated);
         } else {
             throw new UnauthorizedException("Credenziali errate!");
         }

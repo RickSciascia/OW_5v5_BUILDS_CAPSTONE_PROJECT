@@ -41,7 +41,7 @@ public class AuthController {
                     .toList();
             throw new ValException(errorsList);
         } else {
-            return new LoginResponseDTO(this.authService.checkCredentials(dto));
+            return this.authService.checkCredentials(dto);
         }
     }
 
