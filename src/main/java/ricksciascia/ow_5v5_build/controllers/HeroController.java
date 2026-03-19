@@ -2,6 +2,7 @@ package ricksciascia.ow_5v5_build.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,7 @@ public class HeroController {
 //    --------------------- P O S T ---------------------
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Hero saveHero(@RequestBody @Validated HeroDTO heroDto, BindingResult validationRes){
         if(validationRes.hasErrors()) {
             List<String> errorList = validationRes.getFieldErrors()
@@ -43,6 +45,7 @@ public class HeroController {
 
 //    --------------------- P U T ---------------------
     @PutMapping("/{heroId}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Hero editHero(@RequestBody @Validated HeroDTO heroDTO, BindingResult validationRes, @PathVariable Long heroId){
         if(validationRes.hasErrors()) {
             List<String> errorsList = validationRes.getFieldErrors()
@@ -65,6 +68,7 @@ public class HeroController {
     }
 //    --------------------- D E L E T E ---------------------
     @DeleteMapping("/{heroId}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteHero(@PathVariable Long heroId) {
         this.heroService.deleteHeroById(heroId);

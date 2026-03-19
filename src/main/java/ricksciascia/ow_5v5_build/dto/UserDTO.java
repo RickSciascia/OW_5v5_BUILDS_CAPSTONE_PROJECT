@@ -13,7 +13,7 @@ public record UserDTO(
         @Email(message = "L'indirizzo email non è nel formato corretto")
         String email,
         @NotBlank(message = "Il campo password è obbligatorio")
-        @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$" , message = "la password deve avere almeno 8 caratteri, almeno un numero, una lettera maiuscola,una minuscola, un carattere speciale e non può contenere spazi")
+        @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,20}$" , message = "la password deve avere tra 8 e 20 caratteri, almeno un numero, una lettera maiuscola,una minuscola, un carattere speciale (@#$%^&+=!) e non può contenere spazi")
         String password
 ) {
 }
