@@ -7,6 +7,7 @@ public record BuildResponseDTO(
         String name,
         String username,
         String heroName,
+        String heroPortrait,
         PerkDTO minorPerk,
         PerkDTO majorPerk,
         LocalDateTime createdAt

@@ -57,6 +57,7 @@ public class BuildService {
                 build.getName(),
                 build.getUser().getUsername(),
                 build.getHero().getName(),
+                build.getHero().getPortraitImage(),
                 new PerkDTO(
                         build.getMinorPerk().getId(),
                         build.getMinorPerk().getName(),
