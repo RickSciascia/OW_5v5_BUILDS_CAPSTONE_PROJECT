@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 public record PerkDTO(
+        Long id,
         @NotBlank(message = "Il nome del Perk è un campo obbligatorio")
         @Size(min = 2, message = "Il campo nome del Perk deve essere minimo 2 caratteri")
         String name,

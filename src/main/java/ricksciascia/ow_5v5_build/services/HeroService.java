@@ -15,6 +15,7 @@ import ricksciascia.ow_5v5_build.exceptions.BadReqException;
 import ricksciascia.ow_5v5_build.exceptions.NotFoundException;
 import ricksciascia.ow_5v5_build.repositories.HeroRepository;
 import ricksciascia.ow_5v5_build.repositories.PassiveRepository;
+import ricksciascia.ow_5v5_build.repositories.PerkRepository;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -27,6 +28,8 @@ public class HeroService {
     private HeroRepository heroRepository;
     @Autowired
     private PassiveRepository passiveRepository;
+    @Autowired
+    private PerkRepository perkRepository;
 
 //    FIND BY NAME
     public Hero findHeroByName(String heroName){
@@ -283,23 +286,48 @@ public class HeroService {
                 heroFound.getUltimates().addAll(newUltimates);
             }
 
-            if (heroDTO.perks() != null) {
-                heroFound.getPerks().clear();
-                List<Perk> newPerks = heroDTO.perks().stream().map(perkDTO -> {
-                    Perk p = new Perk();
-                    p.setName(perkDTO.name());
-                    p.setDescription(perkDTO.description());
-                    p.setPerkImage(perkDTO.perkImage());
-                    try {
-                        p.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
-                    } catch (Exception e) {
-                        throw new BadReqException("PerkType: " + perkDTO.perkType() + " non valido, inserisci un valore tra MAJOR e MINOR");
+//            if (heroDTO.perks() != null) {
+//                heroFound.getPerks().clear();
+//                List<Perk> newPerks = heroDTO.perks().stream().map(perkDTO -> {
+//                    Perk p = new Perk();
+//                    p.setName(perkDTO.name());
+//                    p.setDescription(perkDTO.description());
+//                    p.setPerkImage(perkDTO.perkImage());
+//                    try {
+//                        p.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
+//                    } catch (Exception e) {
+//                        throw new BadReqException("PerkType: " + perkDTO.perkType() + " non valido, inserisci un valore tra MAJOR e MINOR");
+//                    }
+//                    p.setHero(heroFound);
+//                    return p;
+//                }).toList();
+//
+//                heroFound.getPerks().addAll(newPerks);
+//            }
+
+
+            if(heroDTO.perks()!=null) {
+                List<Perk> updatedPerks = heroDTO.perks().stream().map(perkDTO -> {
+                    if(perkDTO.id() != null) {
+                        return perkRepository.findById(perkDTO.id()).map(existingPerk->{
+                            existingPerk.setName(perkDTO.name());
+                            existingPerk.setDescription(perkDTO.description());
+                            existingPerk.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
+                            existingPerk.setPerkImage(perkDTO.perkImage());
+                            return existingPerk;
+                        }).orElseThrow(()-> new NotFoundException("Perk con ID: " + perkDTO.id() + " non trovato!"));
+                    } else {
+                        Perk newPerk = new Perk();
+                        newPerk.setName(perkDTO.name());
+                        newPerk.setDescription(perkDTO.description());
+                        newPerk.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
+                        newPerk.setPerkImage(perkDTO.perkImage());
+                        return newPerk;
                     }
-                    p.setHero(heroFound);
-                    return p;
                 }).toList();
 
-                heroFound.getPerks().addAll(newPerks);
+                heroFound.getPerks().clear();
+                heroFound.getPerks().addAll(updatedPerks);
             }
 
             if (heroDTO.passive() != null) {

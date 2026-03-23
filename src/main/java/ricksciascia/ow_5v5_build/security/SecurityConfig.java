@@ -42,6 +42,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests(r->r
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers(HttpMethod.GET,"/heroes/**").permitAll()
+                .requestMatchers(HttpMethod.GET,"/builds/hero/**").permitAll()
                 .anyRequest().authenticated());
 
 
