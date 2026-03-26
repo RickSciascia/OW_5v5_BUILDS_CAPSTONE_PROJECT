@@ -13,6 +13,7 @@ import ricksciascia.ow_5v5_build.dto.PassiveDTO;
 import ricksciascia.ow_5v5_build.entities.*;
 import ricksciascia.ow_5v5_build.exceptions.BadReqException;
 import ricksciascia.ow_5v5_build.exceptions.NotFoundException;
+import ricksciascia.ow_5v5_build.repositories.BuildRepository;
 import ricksciascia.ow_5v5_build.repositories.HeroRepository;
 import ricksciascia.ow_5v5_build.repositories.PassiveRepository;
 import ricksciascia.ow_5v5_build.repositories.PerkRepository;
@@ -30,6 +31,8 @@ public class HeroService {
     private PassiveRepository passiveRepository;
     @Autowired
     private PerkRepository perkRepository;
+    @Autowired
+    private BuildRepository buildRepository;
 
 //    FIND BY NAME
     public Hero findHeroByName(String heroName){
@@ -286,25 +289,6 @@ public class HeroService {
                 heroFound.getUltimates().addAll(newUltimates);
             }
 
-//            if (heroDTO.perks() != null) {
-//                heroFound.getPerks().clear();
-//                List<Perk> newPerks = heroDTO.perks().stream().map(perkDTO -> {
-//                    Perk p = new Perk();
-//                    p.setName(perkDTO.name());
-//                    p.setDescription(perkDTO.description());
-//                    p.setPerkImage(perkDTO.perkImage());
-//                    try {
-//                        p.setPerkType(PerkType.valueOf(perkDTO.perkType().toUpperCase()));
-//                    } catch (Exception e) {
-//                        throw new BadReqException("PerkType: " + perkDTO.perkType() + " non valido, inserisci un valore tra MAJOR e MINOR");
-//                    }
-//                    p.setHero(heroFound);
-//                    return p;
-//                }).toList();
-//
-//                heroFound.getPerks().addAll(newPerks);
-//            }
-
 
             if(heroDTO.perks()!=null) {
                 List<Perk> updatedPerks = heroDTO.perks().stream().map(perkDTO -> {
@@ -350,9 +334,11 @@ public class HeroService {
         else throw new BadReqException("Errore: l'eroe con id: " + heroId + " ha come nome: " + heroFound.getName() + " non puoi rinominarlo in: " + heroDTO.name());
     }
 //    DELETE
+    @Transactional
     public void deleteHeroById(Long heroId) {
         Hero heroFound = this.findHeroById(heroId);
-        System.out.println("L'eroe " + heroFound.getName()+ " è stato cancellato insieme a tutti i dati ad esso collegato");
+        buildRepository.deleteByHeroId(heroId);
         heroRepository.delete(heroFound);
+        System.out.println("L'eroe " + heroFound.getName()+ " è stato cancellato insieme a tutti i dati ad esso collegato");
     }
 }
